@@ -1,0 +1,6 @@
+Q.1.1 Le programme est censé affiché un tableau qui a contient des nombres decroissants de 9 à 0(taille du tableau).
+    pour l'indice respectif de tab.
+    
+    La condition i >= 0 est toujours vraie car i est de type unsigned int,
+    qui ne peut pas être négatif. Donc, la boucle ne se terminera jamais et entraînera un dépassement de tableau, 
+    provoquant une "erreur de segmentation" lors de l'exécution.
