@@ -13,7 +13,7 @@ void desalloue_tableau(int *T) {
 }
 
 void remplir_tableau(int *T, int taille, int V){
-    srand(time(NULL));  //facultatif
+    srand(time(NULL));
 
     for (int i = 0; i < taille; i++)
     {
