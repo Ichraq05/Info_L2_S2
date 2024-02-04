@@ -4,3 +4,27 @@ Q.1.1 Le programme est censé affiché un tableau qui a contient des nombres dec
     La condition i >= 0 est toujours vraie car i est de type unsigned int,
     qui ne peut pas être négatif. Donc, la boucle ne se terminera jamais et entraînera un dépassement de tableau, 
     provoquant une "erreur de segmentation" lors de l'exécution.
+
+Q.1.2 //gcc -ggdb -o tme1_exo1p1 tme1_exo1p1.c
+    //gdb tme1_exo1p1
+
+    //gcc -o tme1_exo1p1 tme1_exo1p1.c
+
+    A rajouté dans le code pour avoir un affichage :
+    //printf("[");
+    //printf("%d, ", tab[i]);
+    //printf("%d]\n", tab[0]);
+
+    Pour utiliser gdb, faut :
+    break x où x est un nombre pour la ligne. Après avoir run(r) le code va s'arrêter à la ligne break.
+    Ensuite on spam continue et print l'indice i par exemple pour voir l'évolution de i et si jamais y a une erreur,
+    on sait d'où elle vient.
+
+    Pour sortir de la boucle, i doit devenir négatif. Cependant, i est de type int et est signé (unsigned), 
+    donc il ne peut pas prendre une valeur plus petite que 0.
+
+    Donc i prend une valeur hasard, 4294967295. 
+    L'erreur de segmentation se produit quand la boucle essaie d'accéder à une case mémoire qui n'est pas allouée pour le tableau tab. 
+    Cela se produit parce que l'index 4294967295 est en dehors des limites du tableau, et cela provoque une violation de mémoire, 
+    entraînant l'erreur de segmentation.
+    Donc pour corriger l'erreur, on devrait plutôt déclaré i en int et non en unsigned. 
