@@ -36,3 +36,17 @@ ______________________________________***PARTIE 2***____________________________
 
 Q.1.4 Le programme doit a vue d'oeil créé des adresses avec un numéro de rue, le nom de la rue et le code postale.
     Apres compilation, il est indiqué qu'il y a une faute de segmentation.
+
+    //gcc -ggdb -o tme1_exo1p2 tme1_exo1p2.c
+    //gdb tme1_exo1p2
+    // ./tme1_exo1p2
+
+    Apres la commande p new->rue, il est affiché : $1 = 0x0
+    On voit en continuant que dans le break d'après que il y a une faute de segmentation.
+
+    L'erreur de segmentation se produit parce que new->rue n'a pas été alloué correctement avant d'utiliser strcpy.
+    Lorsque strcpy essaie de copier la chaîne "manoeuvre" dans new->rue (l.15),
+    cela entraîne une violation de mémoire car new->rue pointe vers une adresse non allouée.
+
+    On peut utiliser la fonction strdup qui crée une copie allouée dynamiquement d'une chaîne de caractères. 
+    La fonction strdup alloue automatiquement de la mémoire pour la copie de la chaîne.

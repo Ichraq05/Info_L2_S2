@@ -12,7 +12,7 @@ Adresse* creer_adresse(int n, char* r, int c) {
     Adresse* new = (Adresse*) malloc(sizeof(Adresse));
 
     new->numero = n;
-    strcpy(new->rue, r);
+    new->rue = strdup(r);
     new->code_postal = c;
 
     return new;
