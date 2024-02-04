@@ -1,3 +1,5 @@
+______________________________________***PARTIE 1***____________________________________________________
+
 Q.1.1 Le programme est censé affiché un tableau qui a contient des nombres decroissants de 9 à 0(taille du tableau).
     pour l'indice respectif de tab.
     
@@ -27,5 +29,10 @@ Q.1.2 //gcc -ggdb -o tme1_exo1p1 tme1_exo1p1.c
     L'erreur de segmentation se produit quand la boucle essaie d'accéder à une case mémoire qui n'est pas allouée pour le tableau tab. 
     Cela se produit parce que l'index 4294967295 est en dehors des limites du tableau, et cela provoque une violation de mémoire, 
     entraînant l'erreur de segmentation.
-    
-Q.1.3 Donc pour corriger l'erreur, on devrait plutôt déclaré i en int et non en unsigned. 
+
+Q.1.3 Donc pour corriger l'erreur, on devrait plutôt déclaré i en int et non en unsigned.
+
+______________________________________***PARTIE 2***____________________________________________________
+
+Q.1.4 Le programme doit a vue d'oeil créé des adresses avec un numéro de rue, le nom de la rue et le code postale.
+    Apres compilation, il est indiqué qu'il y a une faute de segmentation.
