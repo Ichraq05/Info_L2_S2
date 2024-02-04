@@ -5,7 +5,7 @@ const static int len = 10;
 
 int main(void) {
     int *tab;
-    unsigned int i;
+    int i;
 
     tab = (int*)malloc(len*sizeof(int));
 
