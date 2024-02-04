@@ -41,7 +41,7 @@ Q.1.4 Le programme doit a vue d'oeil créé des adresses avec un numéro de rue,
     //gdb tme1_exo1p2
     // ./tme1_exo1p2
 
-    Apres la commande p new->rue, il est affiché : $1 = 0x0
+Q.1.5 Apres la commande p new->rue, il est affiché : $1 = 0x0
     On voit en continuant que dans le break d'après que il y a une faute de segmentation.
 
     L'erreur de segmentation se produit parce que new->rue n'a pas été alloué correctement avant d'utiliser strcpy.
