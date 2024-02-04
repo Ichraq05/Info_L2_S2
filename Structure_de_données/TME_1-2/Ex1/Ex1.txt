@@ -39,7 +39,7 @@ Q.1.4 Le programme doit a vue d'oeil créé des adresses avec un numéro de rue,
 
     //gcc -ggdb -o tme1_exo1p2 tme1_exo1p2.c
     //gdb tme1_exo1p2
-    // ./tme1_exo1p2
+    //./tme1_exo1p2
 
 Q.1.5 Apres la commande p new->rue, il est affiché : $1 = 0x0
     On voit en continuant que dans le break d'après que il y a une faute de segmentation.
@@ -50,3 +50,28 @@ Q.1.5 Apres la commande p new->rue, il est affiché : $1 = 0x0
 
     On peut utiliser la fonction strdup qui crée une copie allouée dynamiquement d'une chaîne de caractères. 
     La fonction strdup alloue automatiquement de la mémoire pour la copie de la chaîne.
+
+______________________________________***PARTIE 3***____________________________________________________
+
+Q.1.6 Le programme est censé créer un tableau dynamique(structure Tableau) avec une taille maximale choisi
+    lors de l'initialisation. Ensuite, il ajoute des éléments à ce tableau à l'aide de la fonction ajouterElement,
+    affiche le contenu du tableau puis libère la mémoire.
+
+    //gcc -ggdb -o tme1_exo1p3 tme1_exo1p3.c
+    //gdb tme1_exo1p3
+    //./tme1_exo1p3
+
+    Le programme compile bien mais contient des problèmes cachés.
+
+Q.1.7 D'abord, la variable maxTaille dans la structure n'est pas utilisé. 
+    Ensuite il y a des fuites de mémoires, car libère bien la structure en elle-même,
+    mais pas le tableau tab dans la structure, ²free(t->tab).
+
+Q.1.8 //valgrind --leak-check=yes ./tme1_exo1p3
+    La fuite de mémoire se produit lors de l'appel à la fonction initTableau à la ligne 19 du fichier tme1_exo1p3.c. 
+    Valgrind montre que l'allocation de mémoire avec malloc à cet endroit n'a pas été libérée avant la fin du code.
+
+Q.1.9 Il faut ajouter la libération de la mémoire pour le tableau d'entiers (t->tab),
+    avant de libérer la structure Tableau dans la fonction main.
+    Donc ajouter free(t->tab); avant la ligne free(t);. 
+    Comme ca, la mémoire allouée pour le tableau est libérée correctement avant de libérer la structure.
