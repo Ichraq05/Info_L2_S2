@@ -1,0 +1,17 @@
+1. Doctype indique la version de la grammaire HTML à utiliser
+
+2. Head et Body indiquent respectivement le début des méta-informations et le début du texte
+
+3. A préciser l'encodage du texte, notamment les lettres accentuées.
+
+4. La balise A est un lien hypertextuel:
+cliquer sur son contenu emmènera sur le site Web indiqué dans l'attribut Href.
+
+5. La balise Form délimite le contenu d'un formulaire, ici composé de 3 balises Input.
+
+6. Les occurrences sont &amp; &gt et &eactute;;
+qui servent à afficher respectivement "&" ">" et "é". 
+Les deux premiers sont des caractères réservés de XHTML
+et doivent donc être transcodés quand on veut les afficher.
+Le troisième sert à afficher un "e" accent aigu, quel que soit
+l'encodage spécifié par la balise meta ci-dessus (c'est plus sûr mais plus long).
