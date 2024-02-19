@@ -36,11 +36,11 @@ Dans la liste chainé,
 Dans le pire des cas, la complexité de la recherche dans une liste chaînée est linéaire, c'est-à-dire O(n),
 où n est le nombre d'éléments dans la liste. Lorsque la taille de la bibliothèque augmente,
 le temps de recherche dans une liste chaînée augmente en fonction du nombre d'éléments dans la liste.
-Donc on devrait avoir une courbe de croissance linéaire.
+Donc on a une courbe de croissance linéaire.
 
 Dans la table de hachage,
 Dans le pire des cas, la complexité de la recherche dans une table de hachage est constante, c'est-à-dire O(1), 
 si les collisions sont évitées. Cela dépend aussi de la qualité du code.
-Les temps de calculs sont donc surement plus bas que les listes, mais si elle n'est pas du tout optimiser, alors il est possible 
+Les temps de calculs sont donc plus faibles que les listes, mais si elle n'est pas du tout optimiser, alors il est possible 
 que le temps de calculs soient équivalent ou supérieur au temps de caluls des listes.
 
